@@ -1,0 +1,26 @@
+>> To create a new React App : follow steps mentioned in their official website:
+https://reactjs.org/docs/create-a-new-react-app.html
+
+>> Commands to help you get started:
+npx create-react-app my-app
+cd my-app
+npm start
+
+
+>> Babel is a library for transpiling ES6 to ES5.
+>> In order to use ES6, it's best if we transpile our ES6 JavaScript
+into ES5 JavaScript to support more browsers.
+
+<script type="text/babel">
+-->This signals to Babel that we would like it to handle the execution of the
+JavaScript inside this script body, this way we can write our React app using
+ES6 JavaScript and be assured that Babel will live-transpile its execution in
+browsers that only support ES5.
+
+
+ReactDOM.render(<what>, <where>)
+-->The first argument to ReactDOM.render() is what to render and the second is
+where:
+-->All React components require at least a render() function.
+This render() function is expected to return a virtual DOM
+representation of the browser DOM element(s).
