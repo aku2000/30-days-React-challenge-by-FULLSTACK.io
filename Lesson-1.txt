@@ -1,0 +1,13 @@
+1)React is Javascript Library for building user interfaces.
+
+2)Component:
+>>At the heart of all React applications are components. A component is a selfcontained module that renders some output. We can write interface
+elements like a button or an input field as a React component. Components are composable. A component might include one or more other components
+in its output.
+>>Component is a Javascript code rendered into HTML.
+>>In React, "separation of concerns"(HTML,CSS,Javascript) occurs because of components.
+
+3)Virtual DOM:
+>> React operates not directly on the browser's Document Object Model (DOM) immediately, but on a virtual DOM. That is, rather than manipulating the document in a browser after changes to our data (which can be quite slow) it resolves changes on a DOM built and run entirely in memory. After the virtual DOM has been updated, React intelligently determines what changes to make to the actual browser's DOM.
+>>The React Virtual DOM exists entirely in-memory and is a representation of the web browser's DOM. Because of this, when we write a React component, we're not writing directly to the DOM, but we're writing a virtual component that React will turn into the DOM.
+>>To brief:in Virtual DOM, only parts of the app that are changed are updated and everything else remains the same which makes React fast.
