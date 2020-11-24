@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import '../Timeline.css';
 
 class Header extends React.Component
 {
@@ -12,12 +11,16 @@ class Header extends React.Component
                     <div className="dashBottom"></div>
                     <div className="circle"></div>
                 </div>
-                <span className="title">Timeline</span>
-                <input type="text" className="searchInput" placeholder="Search
-..." />
+                <span className="title">
+                    {this.props.title}
+                </span>
+                <input
+                    type="text"
+                    className="searchInput"
+                    placeholder="Search ..." />
                 <div className="fa fa-search searchIcon"></div>
             </div>
-        );
+        )
     }
 }
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Header from './header'
 import Content from './contents'
+import data from './data'
 class Timeline extends React.Component
 {
     render()
@@ -8,8 +9,8 @@ class Timeline extends React.Component
         return (
             <div className="notificationsFrame">
                 <div className="panel">
-                    <Header />
-                    <Content />
+                    <Header title="~~Timeline~~" />
+                    <Content activities={data.activities} />
                 </div>
             </div>
         );
