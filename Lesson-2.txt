@@ -1,0 +1,18 @@
+1)JSX: the X is interprted in 2 different ways -
+>> JavaScript XML:It allows us to write HTML in React/JavaScript.
+>> JavaScript eXtension: is a React extension that allows us to
+write JavaScript that looks like HTML.
+
+-->Extension of Ecmascript which allows HTML like code to co-exist with JavaScript/React code.
+-->A JSX compiler converts es6 to normal JavaScript which can be run on any web browser.
+
+2)ES5 and ES6:
+
+>> ES5 (the ES stands for ECMAScript) is basically "regular JavaScript." The 5th
+update to JavaScript, ES5 was finalized in 2009. It has been supported by all
+major browsers for several years. 
+>> ES6 is a new version of JavaScript that adds some nice syntactical and
+functional additions. It was finalized in 2015. ES6 is almost fully supported by all major browsers, except
+a few like Internet Explorer 11.
+>> Some cool features added in ES6 version are class keyword, let and const, spread operator (useful in looping through all
+proprties of the object), modules, promise(object is either resolved or rejected)etc.

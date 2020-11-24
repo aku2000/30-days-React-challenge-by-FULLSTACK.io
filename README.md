@@ -4,3 +4,4 @@
 
 
 Lesson 1: What is React?
+Lesson 2: What is JSX and ES6?
