@@ -8,7 +8,7 @@ Lesson 5: Data Driven Components<br>
 Lesson 6: Stateful Components<br>
 Lesson 7: Lifecycle Hooks (Component Lifecycle)<br>
 Lesson 8: Packaging and PropTypes<br>
-
+Lesson 9: Styles<br>
 
 
 

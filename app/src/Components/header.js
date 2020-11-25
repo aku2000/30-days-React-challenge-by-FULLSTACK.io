@@ -11,7 +11,7 @@ class Header extends React.Component
                     <div className="dashBottom"></div>
                     <div className="circle"></div>
                 </div>
-                <span className="title">
+                <span className="title" style={{ color: 'orange' }}>
                     {this.props.title}
                 </span>
                 <input
