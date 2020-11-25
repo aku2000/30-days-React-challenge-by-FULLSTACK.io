@@ -4,7 +4,8 @@ Lesson 1: What is React?<br>
 Lesson 2: What is JSX and ES6?<br>
 Lesson 3: First Components.<br>
 Lesson 4: Complex Components - develop a User Timeline<br>
-Lesson 5: Data Driven Components
+Lesson 5: Data Driven Components<br>
+Lesson 6: Stateful Components<br>
 
 
 

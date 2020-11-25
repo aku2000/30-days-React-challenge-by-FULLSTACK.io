@@ -7,11 +7,11 @@ class activityItem extends React.Component
         const { activity } = this.props;
         return (
             <div className="item">
+                {activity.user.name}
                 <div className="avatar">
                     <img
                         alt={activity.text}
                         src={activity.user.avatar} />
-                    {activity.user.name}
                 </div>
                 <span className="time">
                     {activity.timestamp}
