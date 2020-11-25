@@ -1,6 +1,6 @@
 import React from 'react';
-import './Timeline.css';
-import './Clock.css';
+import './Stylesheets/Timeline.css'
+import './Stylesheets/Clock.css';
 import Timeline from './Components/timeline';
 import Clock from './Components/clock';
 function App()

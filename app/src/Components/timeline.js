@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Header from './header'
 import Content from './contents'
-import data from './data'
+import data from '../datasheets/activitiesdata'
 class Timeline extends React.Component
 {
     render()

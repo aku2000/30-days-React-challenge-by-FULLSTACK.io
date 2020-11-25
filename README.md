@@ -6,6 +6,7 @@ Lesson 3: First Components.<br>
 Lesson 4: Complex Components - develop a User Timeline<br>
 Lesson 5: Data Driven Components<br>
 Lesson 6: Stateful Components<br>
+Lesson 7: Lifecycle Hooks (Component Lifecycle)<br>
 
 
 

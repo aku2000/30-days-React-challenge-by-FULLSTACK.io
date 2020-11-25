@@ -1,0 +1,61 @@
+LifeCycle Hooks - React Components LifeCycle
+-->As React mounts our application, it gives us some hooks (basically functions) where we can insert
+our own functionality at different times in the component's lifecycle.
+
+[ Learn about the new Hooks API - https://www.newline.co/fullstack-react/articles/an-introduction-to-hooks-in-react/ ]
+
+1) componentWillMount/ componentDidMount :
+
+>> When a component is defined on a page in our application, we can't depend
+upon it being available in the DOM immediately as we're defining virtual
+nodes. Instead, we have to wait until the component itself has actually
+mounted in the browser. For functionality that we need to run when it has
+been mounted, we get two different hooks (or functions) we can define. 
+
+>> One that is called just before the component is due to be mounted on the page
+and one that is called just after the component has been mounted.
+
+2) componentWillUpdate() / componentDidUpdate() :
+
+>> Sometimes we'll want to update some data of our component before or after
+we change the actual rendering. For instance, let's say we want to call a
+function to set up the rendering or call a function set when a component's
+props are changed. The componentWillUpdate() method is a reasonable hook
+to handle preparing our component for a change (as long as we don't call
+this.setState() to handle it as it will cause an infinite loop).
+
+3) componentWillReceiveProps() :
+
+>> React will call a method when the component is about to receive new props .
+This is the first method that will be called when a component is going to
+receive a new set of props. Defining this method is a good time to look for
+updates to specific props as it gives us an opportunity to calculate changes
+and update our component's internal state.
+This is the time when we can update our state based on new props.
+
+4) componentWillUnmount() :
+Before the component is unmounted, React will call out to the
+componentWillUnmount() callback. This is the time to handle any clean-up
+events we might need, such as clearing timeouts, clearing data,disconnecting websockets, etc.
+
+-----------------------------------------------------------------------------------------------------------------
+STEPS:
+-----------------------------------------------------------------------------------------------------------------
+
+1) Update our component to be stateful by setting this.state to an object in the constructor.
+
+2) Make an HTTP request when the component itself is 
+getting ready to be mounted (or just after it mounts). By defining the function
+componentWillMount() (or componentDidMount() ) in our component, React
+runs the method just before it mounts in the DOM. This is a perfect spot for
+us to add a GET request(fetch data/events online api etc)
+
+3) Prepare our component for any change/update using componentWillUpdate or componentDidUpdate.
+
+4) Define componentWillReceiveProps() is the time when we can update component's state based on new props.
+Basically check for changes in the prop values.
+
+5) Before the component is unmounted, React will call out to the
+componentWillUnmount() callback. This is the time to handle any clean-up
+events we might need, such as clearing timeouts, clearing data,disconnecting websockets, etc.
+
