@@ -1,0 +1,161 @@
+                                Packaging and PropTypes
+                                
+>> Helps in making reusable React components 
+>> good practice for documentation purposes
+
+>> The prop-types object exports a bunch of different types which we can use
+to define what type a component's prop should be. We can define these using
+the propTypes method in the ES6 class-style React prop:
+
+>> Syntax: 
+import PropTypes from 'prop-types';
+class Header extends React.Component {
+ // ...
+}
+Header.propTypes = {
+ title: PropTypes.string //key is the name of the prop and value is the PropType
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+>> BASIC TYPES : React exposes a few basic types we can use out of the box.
+React has a lot of types to choose from, exported on the PropTypes object
+and even allows for us to define a custom object type. Let's look at an overall
+list of available types:
+
+
+type                example                class
+String              'hello'                 PropTypes.string
+Number              10, 0.1                 PropTypes.number
+Boolean             true / false            PropTypes.bool
+Function            const say => (msg) => console.log("Hello world")         PropTypes.func
+Symbol              Symbol("msg")           PropTypes.symbol
+Object              {name: 'Ari'}           PropTypes.object
+Anything            'whatever', 10, {}      PropTypes.node
+
+It's possible to tell React we want it to pass through anything that can be
+rendered by using PropTypes.node
+
+eg:
+Clock.propTypes = {
+ title: PropTypes.string,
+ count: PropTypes.number,
+ isOn: PropTypes.bool,
+ onDisplay: PropTypes.func,
+ symbol: PropTypes.symbol,
+ user: PropTypes.object,
+ name: PropTypes.node
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+>> COLLECTION TYPES:
+We can pass through iterable collections in our props . We've already seen
+how we can do this when we passed through an array with our activities. To
+declare a component's proptype as an array, we can use the PropTypes.array
+annotation.
+
+We can also require that an array holds only objects of a certain type using
+PropTypes.arrayOf([]) .
+
+
+type                 example             class
+Array                   []               PropTypes.array
+Array of numbers    [1, 2, 3]            PropTypes.arrayOf([type])
+Enum                ['Red', 'Blue']      PropTypes.oneOf([arr])
+
+It's possible to describe an object that can be one of a few different types as
+well using PropTypes.oneOfType([types]) .
+
+eg:
+Clock.propTypes = {
+ counts: PropTypes.array,
+ users: PropTypes.arrayOf(PropTypes.object),
+ alarmColor: PropTypes.oneOf(['red', 'blue']),
+ description: PropTypes.oneOfType([
+ PropTypes.string,
+ PropTypes.instanceOf(Title)
+ ]),
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+>> OBJECT TYPES: It's possible to define types that need to be of a certain shape or instance of a
+certain class.
+
+type                    example                 class
+Object              {name: 'Ari'}           PropTypes.object
+Number object       {count: 42}             PropTypes.objectOf()
+Instance            new Message()           PropTypes.objectOf()
+Object shape        {name: 'Ari'}           PropTypes.shape()
+
+eg:
+Clock.propTypes = {
+ basicObject: PropTypes.object,
+ numbers: PropTypes
+ .objectOf(PropTypes.numbers),
+ messages: PropTypes
+ .instanceOf(Message),
+ contactList: PropTypes.shape({
+ name: PropTypes.string,
+ phone: PropTypes.string,
+ })
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+>> REACT TYPES:
+We can also pass through React elements from a parent to a child. This is
+incredibly useful for building templates and providing customization with the
+templates.
+
+type        example         class
+Element      <Title />      PropTypes.element
+
+eg:
+Clock.propTypes = {
+ displayEle: PropTypes.element
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+>> REQUIRING TYPES : It's possible to require a prop to be passed to a component by appending any
+of the proptype descriptions with .isRequired :
+
+eg:
+Clock.propTypes = {
+ title: PropTypes.name.isRequired,
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+>> CUSTOM TYPES : Finally, it's also possible to pass a function to define custom types. We can do
+this for a single prop or to validate arrays. The one requirement for the
+custom function is that if the validation does not pass, it expects we'll return
+an Error object.
+
+type                example             class
+Custom          'something_crazy'       function(props, propName, componentName){}
+CustomArray     ['something','crazy']   PropTypes.arrayOf(function(props, propName,componentName) {})
+
+eg: 
+
+UserLink.propTypes = {
+    userWithName: (props, propName, componentName) => {
+        if (!props[propName] || !props[propName].name) {
+            return new Error( "Invalid " + propName + ": No name property defined for component " + componentName)
+        }
+    }
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+>> DEFAULT PROPS: Sometimes we want to be able to set a default value for a prop. 
+To set a default prop value, we can use the defaultProps object key on the component.
+
+eg: 
+Header.defaultProps = {
+ title: 'Github activity'
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
