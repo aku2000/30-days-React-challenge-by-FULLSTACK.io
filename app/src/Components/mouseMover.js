@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-class MouseMover extends React.Component
+class MouseMover extends Component
 {
     state = {
         x: 0,

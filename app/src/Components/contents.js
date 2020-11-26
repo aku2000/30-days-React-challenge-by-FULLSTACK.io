@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ActivityItem from './activityItem'
-class Content extends React.Component
+class Content extends Component
 {
     render()
     {

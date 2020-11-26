@@ -11,6 +11,7 @@ Lesson 8: Packaging and PropTypes<br>
 Lesson 9: Styles<br>
 Lesson 10: User Interactivity<br>
 Lesson 11: Pure Components (functional components)<br>
+Lesson 12: Create React App<br>
 
 
 
